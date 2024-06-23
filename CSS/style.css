@@ -1,0 +1,249 @@
+:root {
+    --mainBgColor: #000011;
+    --headingCardsColor: #0372fb;
+    --green: #027203;
+    --red: #790001;
+    --yellow: #ffd000;
+    --cardsColor: #111f2e;
+    --hoverColor: #57606d;
+    --mainTransition: .3s;
+}
+
+/* components start */
+.heading {
+    background-color: var(--headingCardsColor);
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 4px;
+}
+.card {
+    background-color: var(--cardsColor);
+    color: white;
+    border-radius: 4px;
+    transition: var(--mainTransition);
+}
+.card:hover {
+    background-color: var(--hoverColor);
+}
+.min-card {
+    padding: 5px;
+    border-radius: 3px;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+}
+/* components end */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* arranging sections in the page */
+    display: flex;
+}
+
+nav {
+    height: 100vh;
+    width: 110px;
+    background-color: var(--cardsColor);
+    padding: 20px;
+    position: fixed;
+    /* arrainging items */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: .3s;
+}
+
+nav .exit {
+    color: white;
+    font-size: 30px;
+    margin-top: 17px;
+    padding: 8px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--mainTransition);
+    background-color: var(--red);
+    width: 100%;
+}
+
+nav .image-holder {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+nav .image {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border: 3px white solid;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.image-holder span {
+    font-size: 25px;
+    margin-left: 30px;
+    display: none;
+}
+
+nav .image img {
+    max-width: 100%;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav span {
+    display: none;
+}
+
+nav ul li {
+    color: white;
+    font-size: 30px;
+    margin-top: 17px;
+    padding: 8px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--mainTransition);
+}
+
+nav ul li:hover {
+    background-color: var(--hoverColor);
+}
+
+@media (min-width: 601px) {
+    nav span {
+        display: inline;
+    }
+}
+
+.exit p {
+    display: none;
+    margin-left: 30px;
+}
+
+.wrapper {
+    background-color: var(--mainBgColor);
+    flex: 1;
+    padding: 20px 10px;
+    margin-left: 110px;
+    transition: .3s;
+    position: relative;
+    z-index: 4;
+}
+
+.wrapper .main-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.big-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.big-card p {
+    font-size: 18px;
+    text-align: center;
+}
+
+.holder {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.holder .heading {
+    font-weight: bold;
+    text-align: center;
+}
+
+.first-column {
+    width: 45%;
+}
+
+.second-column {
+    width: 30%;
+}
+
+.last-column {
+    width: 20%;
+}
+
+.holder .card {
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.second-column .card,
+.last-column .card {
+    padding: 5px;
+}
+
+.second-column .card .min-card {
+    background-color: var(--green);
+    color: white;
+}
+
+.last-column .card .min-card {
+    background-color: var(--yellow);
+    color: black;
+}
+
+@media (min-width: 768px) {
+    nav {
+        align-items: stretch;
+        width: 88px;
+    }
+    .wrapper {
+        margin-left: 88px;
+    }
+    nav:hover .exit p {
+        display: block;
+    }
+    nav:hover {
+        width: 250px;
+    }
+    nav:hover .image-holder span {
+        display: inline;
+    }
+    nav:hover + .wrapper {
+        margin-left: 250px;
+    }
+    nav .exit i,
+    nav ul li i {
+        margin-right: 30px;
+    }
+    nav .exit ,
+    nav ul li {
+        justify-content: flex-start;
+    }
+    nav li span,
+    nav .exit p {
+        font-size: 23px;
+    }
+}
